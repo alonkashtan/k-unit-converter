@@ -42,7 +42,7 @@ internal class UnitConverterUnitValuesTest {
         assertRounded(17.265778833751, pressure.fromInchesOfMercury(500.0, Pressure.PressureUnits.KgPerSqrCm), "Hg -> in/cm^2")
         assertRounded(24.55771, pressure.fromInchesOfMercury(50.0, Pressure.PressureUnits.LbPerSqrInch), "Hg -> lb/in^2")
         assertRounded(1270.0, pressure.fromInchesOfMercury(50.0, Pressure.PressureUnits.MmOfMercury), "Hg -> mmHg")
-        assertRounded(16931.945, pressure.fromInchesOfMercury(500.0, Pressure.PressureUnits.Millibar), "Hg -> mbar")
+        assertRounded(16931.945, pressure.fromInchesOfMercury(500.0, Pressure.PressureUnits.Millibar), "Hg -> mBar")
         assertRounded(16.931945, pressure.fromInchesOfMercury(500.0, Pressure.PressureUnits.Bar), "Hg -> bar")
 
         assertRounded(50.0, pressure.toInchesOfMercury(1270.0, Pressure.PressureUnits.MmOfMercury), "mmHg -> Hg")
@@ -137,5 +137,17 @@ internal class UnitConverterUnitValuesTest {
         assertRounded(32.33, temperature.kelvinToCelsius(305.48), "K -> c")
         assertRounded(305.48, temperature.mainToUnit(32.33, Temperture.TemperatureUnits.Kelvin), "c -> K")
         assertRounded(32.33, temperature.unitToMain(305.48, Temperture.TemperatureUnits.Kelvin), "K -> c")
+    }
+
+    @Test
+    fun speed() {
+        val speed = unitConverter.speed
+        assertEquals(speed, unitConverter.velocity)
+
+        assertRounded(19.4384, speed.fromMetersPerSecond(10.0, Speed.SpeedUnits.Knot), "m/s -> knot")
+        assertRounded(22.3694, speed.fromMetersPerSecond(10.0, Speed.SpeedUnits.Mph), "m/s -> mph")
+        assertRounded(36.0, speed.fromMetersPerSecond(10.0, Speed.SpeedUnits.Kph), "m/s -> kph")
+
+        assertRounded(10.0, speed.toMetersPerSecond(36.0, Speed.SpeedUnits.Kph), "kph -> m/s")
     }
 }

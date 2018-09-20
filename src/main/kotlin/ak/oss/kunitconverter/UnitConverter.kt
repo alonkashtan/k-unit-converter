@@ -59,4 +59,14 @@ class UnitConverter{
      */
     val temperture = Temperture()
 
+    /**
+     * Speed units
+     */
+    val speed = Speed()
+
+    /**
+     * Speed units. same as [speed]
+     */
+    val velocity = speed
+
 }

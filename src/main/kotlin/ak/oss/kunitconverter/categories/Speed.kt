@@ -7,25 +7,21 @@ class Speed : UnitCategory<Speed.SpeedUnits>() {
 
 
     override val mainUnitName: String
-        get() = "Degrees"
+        get() = "Meter per second"
 
     enum class SpeedUnits(private val metersPerSecond: Double) : Unit {
         /**
-         * Nautical mile per hour
+         * Nautical mile per hour (knot)
          */
         Knot(NauticalMile.inMainUnit/3600),
         /**
-         * International mile per hour
+         * International mile per hour (mph)
          */
         Mph(Mile.inMainUnit/3600),
         /**
-         * Kilometer per hour
+         * Kilometer per hour (kph)
          */
-        Kph(1/3.6),
-        /**
-         * Speed of sound in **average conditions**
-         */
-        Mach(NauticalMile.inMainUnit*644.622/3600);
+        Kph(1/3.6);
 
         override val inMainUnit: Double
             get() = metersPerSecond
