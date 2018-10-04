@@ -1,11 +1,9 @@
 package ak.oss.kunitconverter
 
-import ak.oss.kunitconverter.categories.UnitCategory
 import ak.oss.kunitconverter.categories.Unit
+import ak.oss.kunitconverter.categories.UnitCategory
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFailsWith
-import kotlin.test.assertFalse
 
 internal class UnitCategoryBehaviourTest{
 

@@ -1,6 +1,6 @@
 package ak.oss.kunitconverter.categories
 
-class Temperture : UnitCategory<Temperture.TemperatureUnits>() {
+class Temperature : UnitCategory<Temperature.TemperatureUnits>() {
 
 
     override val mainUnitName: String

@@ -55,9 +55,9 @@ class UnitConverter{
     val azimuth = angle
 
     /**
-     * Temperture units
+     * Temperature units
      */
-    val temperture = Temperture()
+    val temperature = Temperature()
 
     /**
      * Speed units

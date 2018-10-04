@@ -123,20 +123,20 @@ internal class UnitConverterUnitValuesTest {
 
     @Test
     fun temperature() {
-        val temperature = unitConverter.temperture
+        val temperature = unitConverter.temperature
         assertRounded(50.0, temperature.celsiusToFahrenheit(10.0), "c -> f")
         assertRounded(10.0, temperature.fahrenheitToCelsius(50.0), "f -> c")
         assertRounded(90.194, temperature.celsiusToFahrenheit(32.33), "c -> f")
         assertRounded(32.33, temperature.fahrenheitToCelsius(90.194), "f -> c")
-        assertRounded(90.194, temperature.mainToUnit(32.33, Temperture.TemperatureUnits.Fahrenheit), "c -> f")
-        assertRounded(32.33, temperature.unitToMain(90.194, Temperture.TemperatureUnits.Fahrenheit), "f -> c")
+        assertRounded(90.194, temperature.mainToUnit(32.33, Temperature.TemperatureUnits.Fahrenheit), "c -> f")
+        assertRounded(32.33, temperature.unitToMain(90.194, Temperature.TemperatureUnits.Fahrenheit), "f -> c")
 
         assertRounded(283.15, temperature.celsiusToKelvin(10.0), "c -> K")
         assertRounded(10.0, temperature.kelvinToCelsius(283.15), "K -> c")
         assertRounded(305.48, temperature.celsiusToKelvin(32.33), "c -> K")
         assertRounded(32.33, temperature.kelvinToCelsius(305.48), "K -> c")
-        assertRounded(305.48, temperature.mainToUnit(32.33, Temperture.TemperatureUnits.Kelvin), "c -> K")
-        assertRounded(32.33, temperature.unitToMain(305.48, Temperture.TemperatureUnits.Kelvin), "K -> c")
+        assertRounded(305.48, temperature.mainToUnit(32.33, Temperature.TemperatureUnits.Kelvin), "c -> K")
+        assertRounded(32.33, temperature.unitToMain(305.48, Temperature.TemperatureUnits.Kelvin), "K -> c")
     }
 
     @Test

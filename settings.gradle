@@ -10,3 +10,4 @@ pluginManagement {
 rootProject.name = 'k-unit-converter'
 
 include 'k-unit-converter-jvm', 'k-unit-converter-js'
+include 'DeclarationFileCreator'
