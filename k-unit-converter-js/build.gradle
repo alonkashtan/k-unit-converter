@@ -37,4 +37,3 @@ task assembleWeb(type: Sync) {
     dependsOn classes
 }
 
-assemble.dependsOn assembleWeb
