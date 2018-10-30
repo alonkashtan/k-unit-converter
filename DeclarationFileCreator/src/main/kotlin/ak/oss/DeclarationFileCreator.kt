@@ -1,11 +1,14 @@
+package ak.oss
 import kotlin.reflect.KClass
 import ak.oss.kunitconverter.UnitConverter
+import java.io.File
+import javax.print.attribute.standard.Destination
 import kotlin.reflect.KType
 import kotlin.reflect.full.*
 import kotlin.reflect.jvm.javaType
 
 class DeclarationFileCreator{
-    fun createDeclarationFile() {
+    fun createDeclarationFile(destinationPath: String) {
         val c = UnitConverter::class
 
         val stringBuilder = StringBuilder("declare module 'k-unit-converter' {\nexport default UnitConverter\n")
@@ -22,7 +25,9 @@ class DeclarationFileCreator{
         stringBuilder.appendln("}")
 
         stringBuilder.append("}")
-        println(stringBuilder)
+        File(destinationPath).printWriter().use {
+            it.print(stringBuilder.toString())
+        }
     }
 
     private fun getTypeName(type: KType): String {

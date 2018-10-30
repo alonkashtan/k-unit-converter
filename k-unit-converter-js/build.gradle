@@ -20,20 +20,8 @@ compileKotlin2Js {
     kotlinOptions.sourceMapEmbedSources = "always"
 }
 
-task assembleWeb(type: Sync) {
-    configurations.compile.each { File file ->
-        from(zipTree(file.absolutePath), {
-            includeEmptyDirs = false
-            include { fileTreeElement ->
-                def path = fileTreeElement.path
-                path.endsWith(".js") && (path.startsWith("META-INF/resources/") ||
-                        !path.startsWith("META-INF/"))
-            }
-        })
-    }
-    from compileKotlin2Js.destinationDir
-    into "${projectDir}/web"
 
-    dependsOn classes
-}
-
+// Create index.d.ts file using DeclarationFileCreator project task:
+project(":DeclarationFileCreator").tasks.run.args "${projectDir}/src/main/resources/index.d.ts"
+task createDeclarationFile(dependsOn: ":DeclarationFileCreator:run")
+build { dependsOn createDeclarationFile }

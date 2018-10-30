@@ -2,7 +2,6 @@ plugins {
     id 'kotlin-platform-common' version '1.2.61'
 }
 
-
 repositories {
     mavenCentral()
 }
@@ -11,4 +10,9 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-common"
     testCompile "org.jetbrains.kotlin:kotlin-test-annotations-common"
     testCompile "org.jetbrains.kotlin:kotlin-test-common"
+}
+
+subprojects {
+    group = "ak"
+    version = '1.0'
 }
