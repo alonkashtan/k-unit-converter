@@ -1,14 +1,29 @@
 pluginManagement {
     resolutionStrategy {
         eachPlugin {
-            if (requested.id.id == "kotlin-platform-common") {
+            if (requested.id.id == "kotlin-multiplatform") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+
+            if (requested.id.id == "kotlin-multiplatform") {
+                useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
+            }
+
+            if (requested.id.id == "kotlin-multiplatform") {
                 useModule("org.jetbrains.kotlin:kotlin-gradle-plugin:${requested.version}")
             }
         }
     }
 }
+rootProject.name = 'k_unit_converter'
+
+
+enableFeaturePreview('GRADLE_METADATA')
 rootProject.name = 'k-unit-converter'
 
-include 'k-unit-converter-jvm'
-include 'DeclarationFileCreator'
-include 'k-unit-converter-js'
+
+enableFeaturePreview('GRADLE_METADATA')
+rootProject.name = 'k-unit-converter'
+
+
+enableFeaturePreview('GRADLE_METADATA')
