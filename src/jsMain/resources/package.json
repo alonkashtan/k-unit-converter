@@ -1,6 +1,6 @@
 {
   "name": "k-unit-converter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,5 +11,6 @@
   "typings": "index.d.ts",
   "dependencies": {
     "kotlin": "^1.3.21"
-  }
+  },
+  "repository": "github.com/alonkashtan/k-unit-converter"
 }
